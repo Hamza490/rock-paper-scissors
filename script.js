@@ -10,3 +10,11 @@ function getComputerChoice(){
 }
 
 console.log(getComputerChoice());
+
+function getHUmanChoice(){
+  let choice = window.prompt("What is your choice?")
+
+  return choice;
+}
+
+console.log(getHUmanChoice());
