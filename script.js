@@ -21,13 +21,11 @@ console.log(compSelection);
 const humanSelection = getHUmanChoice();
 console.log(humanSelection);
 */
+let humanScore = 0;
+let compScore = 0;
 
 function playRound(humanChoice, computerChoice){
-  let humanScore = 0;
-  let compScore = 0;
-  let choiceToPlay = "yes";
   
-  while(choiceToPlay ==="yes"){
     if(humanChoice===computerChoice){
         console.log("You tied!")
         console.log(humanChoice);
@@ -69,10 +67,14 @@ function playRound(humanChoice, computerChoice){
       console.log(computerChoice);
       compScore++;
     }
-    choiceToPlay = prompt("Do you want to continue playing?").toLowerCase();
+
+    console.log("Your score is: ",humanScore, "Computer Score is: ",compScore);
   }
 
-  console.log("Your score is: ",humanScore, "Computer Score is: ",compScore);
+function playGame(){
+  for (count=0;count<=4; count++){
+    playRound(getHumanChoice(), getComputerChoice());
+  }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+playGame();
